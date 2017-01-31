@@ -2,12 +2,12 @@ $(document).ready(function() {
 
     const SLASH = '/';
     var basePath = 'assets/folders/';
-    var currentPath = 'assets/folders/about/ArtistStatement.txt'; // assets/folders/
+    var currentPath = 'assets/folders/'; // assets/folders/
     var response = null;
     var filedescriptions = null;
     var hasSelected = false;
-    var currentDepth = 2; // 1
-    var cursorDepth = 2; // 1
+    var currentDepth = 1; // 1
+    var cursorDepth = 1; // 1
     var currentIndex = 0; // 0
 
     // Is the file a folder?
@@ -149,8 +149,8 @@ $(document).ready(function() {
         if (isFolder(currentPath) && hasSelected) currentDepth = getDepthOfPath(currentPath, true);
         else currentDepth = getDepthOfPath(currentPath, false);
 
-        console.log('Old Depth: '  + oldDepth);
-        console.log('Current Depth: ' + currentDepth);
+        console.log('Old Path: '  + oldDepth);
+        console.log('New Path: ' + currentPath);
 
         for (var i = 0; i < currentDepth; i++) {
             var path = getCurrentPathAtDepth(i);
